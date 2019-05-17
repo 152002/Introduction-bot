@@ -1,5 +1,5 @@
 import logging
-
+import sys
 from telegram import (ReplyKeyboardMarkup, ReplyKeyboardRemove)
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, RegexHandler, ConversationHandler
 
@@ -96,7 +96,7 @@ def error(bot, update):
     logger.warning('Update "%s" caused error "%s"', update, error)
 
 def main():
-    TOKEN = "Token no"
+    TOKEN = sys.argv[1]
     updater = Updater(TOKEN)
     dp = updater.dispatcher
 
